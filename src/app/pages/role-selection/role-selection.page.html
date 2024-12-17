@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToProfile()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div class="role-selection-container">
+    <ion-card-title>Bienvenido, {{ userEmail }}</ion-card-title>
+
+    <div *ngIf="viajeActivo; else roleSelection">
+      <h2>Ruta del Viaje Aceptado</h2>
+      <div id="map" style="height: 300px;"></div>
+      
+      <ion-button  (click)="cancelarViaje()">Cancelar Viaje</ion-button>
+    </div>
+
+    <ng-template #roleSelection>
+      <div class="role-card conductor-card" (click)="selectConductor()">
+        <ion-icon name="car-sport-outline"></ion-icon>
+        <h2>Conductor</h2>
+        <p>Crea un viaje para llevar más estudiantes</p>
+        <ion-button >Seleccionar Conductor</ion-button>
+      </div>
+
+      <div class="role-card pasajero-card" (click)="selectPasajero()">
+        <ion-icon name="person-outline"></ion-icon>
+        <h2>Pasajero</h2>
+        <p>Busca viajes disponibles.</p>
+        <ion-button >Seleccionar Pasajero</ion-button>
+      </div>
+    </ng-template>
+  </div>
+</ion-content>

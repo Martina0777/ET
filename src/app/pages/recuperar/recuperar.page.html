@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/img/duocuc.png" alt="Logo DUOC" class="header-logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="image-container">
+    <img src="./assets/img/photo_inicio.png" alt="Imagen Inicio" class="responsive-image">
+  </div>
+
+<ion-content class="ion-padding" color="dark">
+  <div class="form-slide">
+    <h2 class="title">Recuperar Contraseña</h2>
+    <form #formulario="ngForm" (ngSubmit)="recuperarPassword()">
+      <ion-item color="white" lines="none" class="custom-item">
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-input 
+          label="Correo Electrónico" 
+          required 
+          type="email"
+          labelPlacement="floating"
+          [(ngModel)]="email" 
+          name="email"
+          placeholder="Correo Electrónico"></ion-input>
+      </ion-item>
+      <ion-button expand="block" fill="clear" type="submit" [disabled]="formulario.invalid" class="custom-button">
+        Enviar correo de recuperación
+      </ion-button>
+    </form>
+    <ion-text lines="none" class="custom-text">
+      <p><a href="/home" class="custom-link">Volver al Inicio</a></p>
+    </ion-text>
+  </div>
+</ion-content>

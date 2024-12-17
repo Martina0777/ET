@@ -1,0 +1,103 @@
+ion-header {
+  --background: #F1B634;
+}
+
+ion-toolbar {
+  --background: #000000; 
+  text-align: center;
+}
+
+ion-title {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 100%; 
+}
+
+.header-logo {
+  max-height: 40px; 
+  width: auto;
+}
+
+ion-content {
+  --background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mueve el contenido hacia arriba */
+  align-items: center;
+  padding-top: 5px; /* Ajusta el espacio superior */
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 0px; 
+  margin-top: 0px;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: 0px; 
+}
+
+ion-card-header {
+  text-align: center;
+}
+
+ion-card-content {
+  color: #ffffff;
+}
+
+ion-card-title {
+  font-size: 1.5rem;
+  color: #666666;
+}
+
+ion-item {
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  color: #666666;
+}
+
+ion-button {
+  margin-top: 16px;
+  background-color: #F1B634;
+  color: white;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1px; 
+  padding: 0px; 
+}
+
+#open-loading {
+  --background: #06090a;  /* Cambia solo el botón de inicio de sesión */
+  color: white;
+}
+
+
+
+.responsive-image {
+  max-width: 50%; 
+  height: auto; 
+  max-height: 100px;
+  margin-bottom: 0px;
+}
+.recuperar-link {
+  text-decoration: none; 
+  color: #4cb9dd; 
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.recuperar-link:hover {
+  text-decoration: underline; 
+}

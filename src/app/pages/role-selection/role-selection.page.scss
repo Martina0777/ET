@@ -1,0 +1,147 @@
+/* Contenedor principal */
+.role-selection-container {
+  text-align: center;
+  color: #f1f1f1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in-out;
+  max-width: 100%;
+  margin: auto;
+  gap: 1rem;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ion-button {
+  margin-top: 16px;
+  background-color: #F1B634;
+  color: white;
+}
+
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+/* Estilos de las tarjetas */
+.role-card {
+  width: 90%;
+  max-width: 350px;
+  background: #0d0f11; /* Fondo azul marino degradado */
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 0.5rem 0;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(255, 195, 65, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.role-card:hover {
+  transform: scale(1.05);
+  background-color: #ffd858;
+  color:black;
+  
+}
+
+/* Bordes de colores en las tarjetas */
+.conductor-card {
+  border-left: 5px solid #ffc400; 
+}
+
+.pasajero-card {
+  border-left: 5px solid #7dbaff; 
+}
+
+.role-card ion-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  animation: popIn 0.5s ease-in-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.role-card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.role-card p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #dcdcdc;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Botones dentro de las tarjetas */
+ion-button {
+  --background: #F1B634; /* Azul medio */
+
+  font-weight: bold;
+  width: 100%;
+
+  transition: background-color 0.3s ease;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.6rem;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.role-card ion-button:hover {
+  filter: brightness(1.1);
+}
+ion-title {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 100%; 
+}
+ion-card-title {
+  font-size: 1.5rem;
+  color: #666666;
+}

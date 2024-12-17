@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Viaje Actual</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div *ngIf="viaje; else noViaje">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ viaje.lugarPartida }} → {{ viaje.destino }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Precio:</strong> ${{ viaje.precio }}</p>
+        <p><strong>Patente:</strong> {{ viaje.patente }}</p>
+        <p><strong>Conductor:</strong> {{ viaje.conductorNombre }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #noViaje>
+    <ion-text color="light">
+      <h2>No tienes un viaje seleccionado.</h2>
+    </ion-text>
+  </ng-template>
+</ion-content>

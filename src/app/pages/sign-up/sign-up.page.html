@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/img/duocuc.png" alt="Logo DUOC" class="header-logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="dark">
+  <!-- Imagen principal -->
+  <div class="image-container">
+    <img src="./assets/img/photo_inicio.png" alt="Imagen Inicio" class="responsive-image">
+  </div>
+
+  <!-- Formulario de Registro -->
+  <div class="form-container">
+    <ion-card-title class="title-center">Regístrate</ion-card-title>
+
+    <!-- Nombre -->
+    <ion-item color="white" lines="none">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-input 
+        placeholder="Ingresa tu nombre" 
+        [(ngModel)]="nombre" 
+        (ionInput)="Validar()">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="nombreError">{{ nombreError }}</ion-text>
+
+    <!-- Apellido -->
+    <ion-item color="white" lines="none">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-input 
+        placeholder="Ingresa tu apellido" 
+        [(ngModel)]="apellido" 
+        (ionInput)="Validar()">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="apellidoError">{{ apellidoError }}</ion-text>
+
+    <!-- Correo -->
+    <ion-item color="white" lines="none">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-input 
+        placeholder="Ingresa tu correo electrónico" 
+        [(ngModel)]="email" 
+        (ionInput)="Validar()" 
+        type="email">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="emailError">{{ emailError }}</ion-text>
+
+    <!-- Contraseña -->
+    <ion-item color="white" lines="none">
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-input 
+        placeholder="Ingresa tu contraseña" 
+        [(ngModel)]="password" 
+        (ionInput)="Validar()" 
+        type="password">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="passwordError">{{ passwordError }}</ion-text>
+
+    <!-- Botón de Registro -->
+    <div class="button-container">
+      <ion-button 
+        expand="block" 
+        fill="solid" 
+        (click)="registrarUsuario()" 
+        [disabled]="!canProceed">
+        Registrar
+      </ion-button>
+    </div>
+
+    <!-- Redirección a Inicio de Sesión -->
+    <div class="text-center">
+      <p>¿Ya tienes una cuenta? <a href="/home">Iniciar Sesión</a></p>
+    </div>
+  </div>
+</ion-content>

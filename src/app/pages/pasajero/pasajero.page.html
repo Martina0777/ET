@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Viajes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let viaje of viajes" (click)="seleccionarViaje(viaje)">
+      <ion-label>
+        <h2>{{ viaje.lugarPartida }} - {{ viaje.destino }}</h2>
+        <p>Precio: ${{ viaje.precio }}</p>
+        <p>Patente: {{ viaje.patente }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToRoleSelection()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div class="profile-container">
+    <div class="profile-image-container">
+      <img *ngIf="profileImageUrl | async as imageUrl; else defaultImage" [src]="imageUrl" alt="Profile Image" />
+      <ng-template #defaultImage>
+        <img src="assets/default-profile.png" alt="Default Profile Image" />
+      </ng-template>
+      <label class="edit-icon">
+        <ion-icon name="pencil-outline"></ion-icon>
+        <input type="file" (change)="onFileSelected($event)" hidden />
+      </label>
+    </div>
+
+    <h2 class="user-email">{{ userEmail }}</h2>
+
+   
+    <!-- Botones-->
+    <div class="action-buttons">
+      
+      <ion-button expand="block" color="danger" (click)="logout()">
+        Cerrar Sesión
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

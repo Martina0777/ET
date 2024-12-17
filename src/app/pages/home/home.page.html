@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/img/duocuc.png" alt="Logo DUOC" class="header-logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="image-container">
+    <img src="./assets/img/photo_inicio.png" alt="Imagen Inicio" class="responsive-image">
+  </div>
+
+<ion-content class="ion-padding" color="dark">
+  <div class="form-slide">
+     <ion-card-title>Inicia Sesión</ion-card-title>
+    <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+      <ion-item color="white" lines="none">
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-input 
+          label="Correo Electrónico" 
+          required 
+          type="email"
+          labelPlacement="floating"
+          [(ngModel)]="email" 
+          name="email"
+          placeholder="Correo Electrónico"></ion-input>
+      </ion-item>
+      <ion-item color="white" lines="none">
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-input 
+          label="Contraseña" 
+          required 
+          [type]="showPassword ? 'text' : 'password'"
+          labelPlacement="floating" 
+          [(ngModel)]="password" 
+          name="password"
+          placeholder="******"></ion-input>
+        <ion-icon 
+          name="eye-off" 
+          slot="end" 
+          *ngIf="!showPassword" 
+          (click)="togglePasswordVisibility()">
+        </ion-icon>
+        <ion-icon 
+          name="eye" 
+          slot="end" 
+          *ngIf="showPassword" 
+          (click)="togglePasswordVisibility()">
+        </ion-icon>
+      </ion-item>
+      <ion-button expand="block" fill="clear" type="submit" [disabled]="formulario.invalid">
+        Iniciar Sesión
+      </ion-button>
+      
+    </form>
+    <ion-text lines="none">
+      <p>¿No tienes una cuenta? <a href="/sign-up">Regístrate</a></p>
+    </ion-text>
+    <ion-text  lines="none">
+      <p>¿Olvidaste tu contraseña? <a href="/recuperar">Recuperar Contraseña</a></p>
+    </ion-text>
+  </div>
+</ion-content>
